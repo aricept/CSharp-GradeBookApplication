@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using GradeBook.Enums;
 
 namespace GradeBook.GradeBooks
 {
@@ -29,5 +30,47 @@ namespace GradeBook.GradeBooks
             else
                 return 'F';
         }
+
+        // public override bool Equals(object obj)
+        // {
+        //     return base.Equals(obj);
+        // }
+
+        // public override int GetHashCode()
+        // {
+        //     return base.GetHashCode();
+        // }
+
+        // public override string ToString()
+        // {
+        //     return base.ToString();
+        // }
+
+        // public override double GetGPA(char letterGrade, StudentType studentType)
+        // {
+        //     return base.GetGPA(letterGrade, studentType);
+        // }
+
+        public override void CalculateStatistics()
+        {
+            if(Students.Count < 5)
+            {
+                Console.Write("Ranked grading requires at least 5 students with grades in order to properly calculate a student's overall grade.");
+                return;
+            }
+            base.CalculateStatistics();
+        }
+
+        public override void CalculateStudentStatistics(string name)
+        {
+            if(Students.Count < 5)
+            {
+                Console.Write("Ranked grading requires at least 5 students with grades in order to properly calculate a student's overall grade.");
+                return;
+            }
+            base.CalculateStudentStatistics(name);
+        }
+
+        public override 
     }
 }
